@@ -143,7 +143,7 @@ SparseMatrix suma(SparseMatrix M1, SparseMatrix M2, int n, int m){
     SparseMatrix M(9, 7);
     for(int i=0; i<n;i++){
         for(int j=0;j<m;j++){
-            
+
         }
     }
 
@@ -179,6 +179,7 @@ int main() {
 
     SparseMatrix M(9,7);
     M = suma(M1,M2,n,m);
+    M.display();
 
     return 0;
 }
