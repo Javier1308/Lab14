@@ -65,7 +65,7 @@ private:
         return curr;
     }
 
-   
+
 public:
     SparseMatrix(int r, int c) : rowHead(nullptr), colHead(nullptr), rows(r),
                                  cols(c) {}
@@ -138,7 +138,21 @@ public:
         }
     }
 };
+
+SparseMatrix suma(SparseMatrix M1, SparseMatrix M2, int n, int m){
+    SparseMatrix M(9, 7);
+    for(int i=0; i<n;i++){
+        for(int j=0;j<m;j++){
+            
+        }
+    }
+
+    return M;
+}
+
 int main() {
+    int n =9;
+    int m =7;
     SparseMatrix M1(9, 7);
     M1.insert(2,3,3);
     M1.insert(5,1,3);
@@ -164,7 +178,7 @@ int main() {
     M2.display();
 
     SparseMatrix M(9,7);
-    M = suma(M1,M2);
-    
+    M = suma(M1,M2,n,m);
+
     return 0;
 }
