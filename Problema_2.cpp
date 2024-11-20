@@ -64,6 +64,36 @@ private:
         }
         return curr;
     }
+
+    SparseMatrix<T> suma(SparseMatrix<T> &otra)
+    {
+        SparseMatrix<T> resultado(n_rows, n_cols);
+        for (int i = 0; i < n_rows; ++i)
+        {
+            Node<T> *current1 = rows[i];
+            Node<T> *current2 = otra.rows[i];
+            while (current1 || current2)
+            {
+                if (!current2 || (current1 && current1->pos_col < current2->pos_col))
+                {
+                    resultado.insertar(i, current1->pos_col, current1->data);
+                    current1 = current1->next_col;
+                }
+                else if (!current1 || (current2 && current2->pos_col < current1->pos_col))
+                {
+                    resultado.insertar(i, current2->pos_col, current2->data);
+                    current2 = current2->next_col;
+                }
+                else
+                {
+                    resultado.insertar(i, current1->pos_col, current1->data + current2->data);
+                    current1 = current1->next_col;
+                    current2 = current2->next_col;
+                }
+            }
+        }
+        return resultado;
+    }
 public:
     SparseMatrix(int r, int c) : rowHead(nullptr), colHead(nullptr), rows(r),
                                  cols(c) {}
