@@ -139,7 +139,7 @@ public:
     }
 };
 int main() {
-    SparseMatrix mat(9, 9);
+    SparseMatrix mat(10, 10);
     mat.insert(2, 1, 3);
     mat.insert(2, 2, 5);
     mat.insert(2, 7, 9);
