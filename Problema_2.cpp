@@ -4,8 +4,6 @@
 - Santiago Silva
 */
 
-
-
 #include <iostream>
 using namespace std;
 struct Cell {
@@ -139,18 +137,29 @@ public:
     }
 };
 int main() {
-    SparseMatrix mat(9, 9);
-    mat.insert(2, 1, 3);
-    mat.insert(2, 2, 5);
-    mat.insert(2, 7, 9);
-    mat.insert(3, 7, 5);
-    mat.insert(4, 5, 5);
-    mat.insert(4, 9, 22);
-    mat.insert(6, 5, 5);
-    mat.insert(7, 2, 5);
-    mat.insert(7, 8, 5);
-    mat.insert(9, 9, 5);
-    mat.display();
+    SparseMatrix M1(9, 7);
+    M1.insert(2,3,3);
+    M1.insert(5,1,3);
+    M1.insert(5,4,1);
+    M1.insert(7,4,5);
+    M1.insert(8,1,1);
+    M1.insert(8,6,4);
+    M1.insert(9,3,2);
+    M1.display();
+
+    cout<<endl;
+
+
+
+    SparseMatrix M2(9, 7);
+    M2.insert(2,3,4);
+    M2.insert(5,1,2);
+    M2.insert(5,4,1);
+    M2.insert(7,4,4);
+    M2.insert(8,1,3);
+    M2.insert(8,6,2);
+    M2.insert(9,3,1);
+    M2.display();
 
     return 0;
 }
